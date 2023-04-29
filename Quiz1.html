@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stock Price Game</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+</head>
+
+<body>
+    <h1>Quiz 1</h1>
+    <h2>Stock Price Game</h2>
+    <p><b>Hint: </b>A ____ market occurs when securities are on the rise</p>
+
+    <form>
+        <label for="answer">Enter your answer:</label>
+        <input type="text" id="answer" name="answer">
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <p>
+        <a href="skip.html">
+            <button>Skip</button>
+        </a>
+    </p>
+
+    <script>
+        const submitBtn = document.getElementById("submit-btn");
+        const answerInput = document.getElementById("answer");
+
+        submitBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const userAnswer = answerInput.value.toLowerCase();
+            if (userAnswer === "bull") {
+                // Redirect to next page
+                window.location.href = "Quiz2.html";
+            } else {
+                alert("Incorrect answer. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

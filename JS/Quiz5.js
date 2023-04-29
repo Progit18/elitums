@@ -1,5 +1,7 @@
 const url = "https://api.coincap.io/v2/assets/?ids=bitcoin,ethereum,tether,binance-coin,usd-coin";
 
+let numAttempts = 0;
+
 const getHighestPrice = () => {
   fetch(url)
     .then(response => response.json())
@@ -22,8 +24,11 @@ const getHighestPrice = () => {
           let selectedAnswer = card.querySelector(".name").textContent;
           if (selectedAnswer === highestPriceAsset) {
             alert(`Congratulations, you selected the correct answer!\n\n${resultMessage}`);
+            // Redirect to new page
+            window.location.href = "Cong.html";
           } else {
-            alert(`Sorry, the correct answer was ${highestPriceAsset}.\n\n${resultMessage}`);
+            numAttempts++;
+            alert(`Sorry, that is incorrect. Please try again.`);
           }
         });
       });

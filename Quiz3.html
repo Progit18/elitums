@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stock Price Game</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+</head>
+
+<body>
+    <h1>Quiz 3</h1>
+    <h2>Stock Price Game</h2>
+    <p><b>Hint: </b>The first computerised stock exchange in India</p>
+    
+    <form>
+        <input type="radio" name="exchange" value="BSE">BSE<br>
+        <input type="radio" name="exchange" value="NSE">NSE<br>
+        <input type="radio" name="exchange" value="MCX">MCX<br>
+        <input type="radio" name="exchange" value="NCDEX">NCDEX<br>
+        <button type="button" onclick="checkAnswer()">Submit</button>
+    </form>
+    
+    <p id="error" style="color: red; display: none;">Please select an answer.</p>
+    
+    <script>
+        function checkAnswer() {
+            var selectedOption = document.querySelector('input[name="exchange"]:checked');
+            if (selectedOption) {
+                if (selectedOption.value === "NSE") {
+                    window.location.href = "Quiz4.html";
+                } else {
+                    document.getElementById("error").style.display = "block";
+                }
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

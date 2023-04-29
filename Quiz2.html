@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stock Price Game</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+</head>
+
+<body>
+    <h1>Quiz 2</h1>
+    <h2>Stock Price Game</h2>
+    <p><b>Hint: </b>Biggest Bull of Indian Stock Market</p>
+    <div id="game-area">
+        <div class="stock">
+            <img src="https://wearethewriters.com/wp-content/uploads/2021/01/Harshad-Mehta-Pic.jpg" alt="Harshad Mehta">
+            <span class="name">Harshad Mehta</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://2.bp.blogspot.com/-vpHGATjrZEc/WQxKUur8xEI/AAAAAAAAB5I/BP1y2QrbrZQ1uwFLX_QwVja4PONj9fW0gCLcB/s1600/1490126218-8585.jpg" alt="radhakrishna damani">
+            <span class="name">Radhakrishna Damani</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://cdn.zeebiz.com/sites/default/files/2018/11/10/59271-rakesh-jhunjhunwala-reuters-1.jpg" alt="Rakesh Jhunjhunwala">
+            <span class="name">Rakesh Jhunjhunwala</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://images.ottplay.com/images/ashneer-grover-1643881993.jpg?impolicy=ottplay-20210210&width=1200&height=675"
+                alt="Ashneer Grover">
+            <span class="name">Ashneer Grover</span>
+            <span class="price"></span>
+        </div>
+    </div>
+    <p>
+        <a href="skip.html">
+            <button>Skip</button>
+        </a>
+    </p>
+    <script>
+        let correctAnswer = "Rakesh Jhunjhunwala";
+        let answerCards = document.querySelectorAll(".stock");
+        answerCards.forEach(card => {
+            card.addEventListener("click", () => {
+                let selectedAnswer = card.querySelector(".name").textContent;
+                if (selectedAnswer === correctAnswer) {
+                    window.location.href = "Quiz3.html";
+                } else {
+                    alert("Sorry, that is incorrect. Please try again.");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
