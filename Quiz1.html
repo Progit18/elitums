@@ -2,24 +2,34 @@
 <html lang="en">
 
 <head>
-    <title>Stock Price Game</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+    <title>Wildlife Treasure Hunt</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <style>
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCEDqvqeY8a3ccMsJLISAh2pDQ1E2QYDANJ4Gieq0FpA&usqp=CAU&ec=48665698');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Quiz 1</h1>
-    <h2>Stock Price Game</h2>
-    <p><b>Hint: </b>A ____ market occurs when securities are on the rise</p>
+    <h2>Wildlife Treasure Hunt</h2>
+    <p><b>Hint: </b>The ____ Forest is the largest forest in the world.</p>
 
     <form>
-        <label for="answer">Enter your answer:</label>
+        <label for="answer"><b>Enter your answer:</label>
         <input type="text" id="answer" name="answer">
         <button type="submit" id="submit-btn">Submit</button>
     </form>
 
-    <p>
+    <p class="gap">
         <a href="skip.html">
-            <button>Skip</button>
+            <button class="btn">Skip</button>
+        </a>
+        <a href="exit.html">
+            <button class="btn">Exit</button>
         </a>
     </p>
 
@@ -30,7 +40,7 @@
         submitBtn.addEventListener("click", (event) => {
             event.preventDefault();
             const userAnswer = answerInput.value.toLowerCase();
-            if (userAnswer === "bull") {
+            if (userAnswer === "amazon") {
                 // Redirect to next page
                 window.location.href = "Quiz2.html";
             } else {

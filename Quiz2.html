@@ -2,44 +2,62 @@
 <html lang="en">
 
 <head>
-    <title>Stock Price Game</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+    <title>Wildlife Treasure Hunt</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <style>
+        body{
+            background-image: url('https://img.freepik.com/free-vector/scene-with-volcano-forest_1308-100899.jpg?size=626&ext=jpg&ga=GA1.2.1161362074.1682960487&semt=robertav1_2_sidr');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Quiz 2</h1>
-    <h2>Stock Price Game</h2>
-    <p><b>Hint: </b>Biggest Bull of Indian Stock Market</p>
+    <h2>Wildlife Treasure Hunt</h2>
+    <p><b>Hint: </b>One of them is extinct.</p>
     <div id="game-area">
         <div class="stock">
-            <img src="https://wearethewriters.com/wp-content/uploads/2021/01/Harshad-Mehta-Pic.jpg" alt="Harshad Mehta">
-            <span class="name">Harshad Mehta</span>
+            <img src="https://th.bing.com/th?id=OIP.4OccF8LZZ4iECKm9dC2w4QHaJP&w=223&h=279&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Elephant">
+            <span class="name">Elephant</span>
             <span class="price"></span>
         </div>
         <div class="stock">
-            <img src="https://2.bp.blogspot.com/-vpHGATjrZEc/WQxKUur8xEI/AAAAAAAAB5I/BP1y2QrbrZQ1uwFLX_QwVja4PONj9fW0gCLcB/s1600/1490126218-8585.jpg" alt="radhakrishna damani">
-            <span class="name">Radhakrishna Damani</span>
+            <img src="https://th.bing.com/th/id/OIP.hDHiU7YFZoJQQLQFo4gBzgHaJ4?w=146&h=195&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+             alt="Dog">
+            <span class="name">Dog</span>
             <span class="price"></span>
         </div>
         <div class="stock">
-            <img src="https://cdn.zeebiz.com/sites/default/files/2018/11/10/59271-rakesh-jhunjhunwala-reuters-1.jpg" alt="Rakesh Jhunjhunwala">
-            <span class="name">Rakesh Jhunjhunwala</span>
+            <img src="https://th.bing.com/th/id/OIP.a5EydlBzLC7cUvGTC6WcGQHaJi?w=157&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+            alt="Cheetah">
+            <span class="name">Cheetah</span>
             <span class="price"></span>
         </div>
         <div class="stock">
-            <img src="https://images.ottplay.com/images/ashneer-grover-1643881993.jpg?impolicy=ottplay-20210210&width=1200&height=675"
-                alt="Ashneer Grover">
-            <span class="name">Ashneer Grover</span>
+            <img src="https://th.bing.com/th/id/OIP.LLXvwNPtO4ONUu_Rju7GEAHaIH?pid=ImgDet&rs=1"
+                alt="Mammoth">
+            <span class="name">Mammoth</span>
             <span class="price"></span>
         </div>
+        <div class="stock">
+            <img src="https://th.bing.com/th/id/OIP.aiBioftmBc5c0WlH4H7nDgHaIh?w=140&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Rhino">
+            <span class="name">Rhino</span>
+            <span class="price"></span>
+        </div>
+        
     </div>
-    <p>
+    <p class="gap">
         <a href="skip.html">
-            <button>Skip</button>
+            <button class="btn">Skip</button>
+        </a>
+        <a href="exit.html">
+            <button class="btn">Exit</button>
         </a>
     </p>
     <script>
-        let correctAnswer = "Rakesh Jhunjhunwala";
+        let correctAnswer = "Mammoth";
         let answerCards = document.querySelectorAll(".stock");
         answerCards.forEach(card => {
             card.addEventListener("click", () => {

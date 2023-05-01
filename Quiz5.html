@@ -3,50 +3,75 @@
 
 <head>
     <title>Stock Price Game</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <style>
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjUy7rlbqnnWF7aqk4Q_Hq83igN0jmXs0TFJ4lfXaaJg&usqp=CAU&ec=48665698');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Quiz 5</h1>
-    <h2>Stock Price Game</h1>
-        <p> <b>Hint: </b> The Answer is the one having the highest Cryptocurrency at the current time.</p>
+    <h2>Wildlife Treasure Hunt</h1>
+        <p> <b>Hint: </b> Where Bats live.</p>
         <div id="game-area">
             <div class="stock">
-                <img src="https://cdn.dribbble.com/users/1373100/screenshots/5515742/btc_gif_drib_v1.gif" alt="Bitcoin">
-                <span class="name">Bitcoin</span>
+                <img src="https://th.bing.com/th/id/OIP.NPFzBCOfOd8kc0eUfwlT-AHaGQ?pid=ImgDet&rs=1"
+                 alt="Cave">
+                <span class="name">Cave</span>
                 <span class="price"></span>
             </div>
             <div class="stock">
-                <img src="https://thumbs.gfycat.com/EqualPowerfulKoodoo-size_restricted.gif" alt="Ethereum">
-                <span class="name">Ethereum</span>
+                <img src="https://th.bing.com/th/id/OIP.jZsZIWAoIHVbjBan2dyGCwHaF7?pid=ImgDet&rs=1" alt="Lake">
+                <span class="name">Lake</span>
                 <span class="price"></span>
             </div>
             <div class="stock">
-                <img src="https://openseauserdata.com/files/bb8d7f8bb662338f03224cb67bbccf0b.gif" alt="Tether">
-                <span class="name">Tether</span>
+                <img src="https://webstockreview.net/images/clipart-grass-meadow-15.png" alt="Land">
+                <span class="name">Land</span>
                 <span class="price"></span>
             </div>
             <div class="stock">
-                <img src="https://media2.giphy.com/media/mVHENVoUFjKT1GeXta/giphy.gif?cid=6c09b952ma4v4r8x8qecp3uq3jzecwazxhldbrizsh3k5r6y&ep=v1_stickers_related&rid=giphy.gif&ct=s"
-                    alt="BNB">
-                <span class="name">BNB</span>
+                <img src="https://th.bing.com/th/id/OIP.MWQRaWbJvW5sVVeMRffNAAHaEK?w=294&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt="Snow">
+                <span class="name">Snow</span>
                 <span class="price"></span>
             </div>
             <div class="stock">
-                <img src="https://haruinvest.com/blog/wp-content/uploads/2022/11/USDC-open-1_11-1.gif" alt="USDC">
-                <span class="name">USDC</span>
+                <img src="https://thumbs.dreamstime.com/b/hole-animal-ground-burrow-pile-dirt-vector-illustration-cartoon-style-hole-animal-ground-burrow-pile-dirt-vector-228245529.jpg" alt="Burrow">
+                <span class="name">Burrow</span>
                 <span class="price"></span>
             </div>
 
 
         </div>
-        <p>
+        <p class="gap">
             <a href="skip.html">
-                <button>Skip</button>
+                <button class="btn">Skip</button>
+            </a>
+            <a href="exit.html">
+                <button class="btn">Exit</button>
             </a>
         </p>
 
-        <script src="./JS/Quiz5.js"></script>
+        <script>
+            let correctAnswer = "Cave";
+            let answerCards = document.querySelectorAll(".stock");
+            answerCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    let selectedAnswer = card.querySelector(".name").textContent;
+                    if (selectedAnswer === correctAnswer) {
+                        window.location.href = "Cong.html";
+                    } else {
+                        alert("Sorry, that is incorrect. Please try again.");
+                    }
+                });
+            });
+        </script>
+        
 </body>
 
 </html>

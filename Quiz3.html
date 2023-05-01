@@ -2,36 +2,52 @@
 <html lang="en">
 
 <head>
-    <title>Stock Price Game</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+    <title>Wildlife Treasure Hunt</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <style>
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ1sgGryCEdnLRLhCUjibvbAam2rVjT_nnKxup8FRNTA&usqp=CAU&ec=48665698');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Quiz 3</h1>
-    <h2>Stock Price Game</h2>
-    <p><b>Hint: </b>The first computerised stock exchange in India</p>
+    <h2>Wildlife Treasure Hunt</h2>
+    <p><b>Hint: </b>Scientific name is <i>Animalia</p>
     
-    <form>
-        <input type="radio" name="exchange" value="BSE">BSE<br>
-        <input type="radio" name="exchange" value="NSE">NSE<br>
-        <input type="radio" name="exchange" value="MCX">MCX<br>
-        <input type="radio" name="exchange" value="NCDEX">NCDEX<br>
+    <form class="form">
+        <input type="radio" name="exchange" value="Bird"><b>Bird<br>
+        <input type="radio" name="exchange" value="Insect"><b>Insect<br>
+        <input type="radio" name="exchange" value="Animal"><b>Animal<br>
+        <input type="radio" name="exchange" value="Reptile"><b>Reptile<br>
         <button type="button" onclick="checkAnswer()">Submit</button>
     </form>
     
     <p id="error" style="color: red; display: none;">Please select an answer.</p>
+
+    <p class="gap">
+        <a href="skip.html">
+            <button class="btn">Skip</button>
+        </a>
+        <a href="exit.html">
+            <button class="btn">Exit</button>
+        </a>
+    </p>
     
     <script>
         function checkAnswer() {
             var selectedOption = document.querySelector('input[name="exchange"]:checked');
             if (selectedOption) {
-                if (selectedOption.value === "NSE") {
+                if (selectedOption.value === "Animal") {
                     window.location.href = "Quiz4.html";
                 } else {
-                    document.getElementById("error").style.display = "block";
+                    alert("Incorrect answer. Please try again.");
                 }
             } else {
-                document.getElementById("error").style.display = "block";
+                alert("Incorrect answer. Please try again.");
             }
         }
     </script>

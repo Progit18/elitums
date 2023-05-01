@@ -2,43 +2,74 @@
 <html lang="en">
 
 <head>
-    <title>Stock Price Game</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/Quiz5.css">
+    <title>Wildlife Treasure Hunt</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <style>
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPXVbihsfJw5YBucv1dzVKPey9HfSu0MCrB5uSpMu6o62XmVPYNd9VctCo4__La0qkMzuNTkCdB8s&usqp=CAU&ec=48665698');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Quiz 4</h1>
-    <h2>Stock Price Game</h2>
-    <p><b>Hint: </b>In ____ ,Sensex cross the 5000 point mark for the first time</p>
-
-    <form>
-        <label for="answer">Enter your answer:</label>
-        <input type="text" id="answer" name="answer">
-        <button type="submit" id="submit-btn">Submit</button>
-    </form>
-
-    <p>
+    <h2>Wildlife Treasure Hunt</h2>
+    <p><b>Hint: </b>This Bird is an animal to</p>
+    <div id="game-area">
+        <div class="stock">
+            <img src="https://th.bing.com/th/id/OIP._-Ufjey-aCavb9KdoBQ9rwHaIC?w=150&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Dodo">
+            <span class="name">Dodo</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://th.bing.com/th/id/OIP.o4R-cPMISEvna_LsPQg3RAHaHa?w=218&h=218&c=7&r=0&o=5&dpr=1.5&pid=1.7" 
+             alt="Ostrich">
+            <span class="name">Ostrich</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://th.bing.com/th/id/R.f701ab2c477cc10549748d3f8edc1b03?rik=89Wgu96rSPGihg&riu=http%3a%2f%2fclipart-library.com%2fimg%2f761159.png&ehk=JHEVW8nHMvHlpDq0uaxg5wAWkocWfV5F8GrDbAPa%2b2M%3d&risl=&pid=ImgRaw&r=0" 
+            alt="Bat">
+            <span class="name">Bat</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://th.bing.com/th/id/OIP.E4hqK8jWfAfSMj7jFzgNOQHaE9?w=278&h=186&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                alt="Eagle">
+            <span class="name">Eagle</span>
+            <span class="price"></span>
+        </div>
+        <div class="stock">
+            <img src="https://th.bing.com/th/id/OIP.zufy-hoeU3GSl4_BKir7uAHaNX?w=186&h=335&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Flamingo">
+            <span class="name">Flamingo</span>
+            <span class="price"></span>
+        </div>
+        
+    </div>
+    <p class="gap">
         <a href="skip.html">
-            <button>Skip</button>
+            <button class="btn">Skip</button>
+        </a>
+        <a href="exit.html">
+            <button class="btn">Exit</button>
         </a>
     </p>
-
     <script>
-        const submitBtn = document.getElementById("submit-btn");
-        const answerInput = document.getElementById("answer");
-
-        submitBtn.addEventListener("click", (event) => {
-            event.preventDefault();
-            const userAnswer = answerInput.value.toLowerCase();
-            if (userAnswer === "1999") {
-                // Redirect to next page
-                window.location.href = "Quiz5.html";
-            } else {
-                alert("Incorrect answer. Please try again.");
-            }
+        let correctAnswer = "Bat";
+        let answerCards = document.querySelectorAll(".stock");
+        answerCards.forEach(card => {
+            card.addEventListener("click", () => {
+                let selectedAnswer = card.querySelector(".name").textContent;
+                if (selectedAnswer === correctAnswer) {
+                    window.location.href = "Quiz5.html";
+                } else {
+                    alert("Sorry, that is incorrect. Please try again.");
+                }
+            });
         });
     </script>
-
 </body>
 
 </html>

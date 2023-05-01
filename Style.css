@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 h1,
@@ -53,10 +54,35 @@ h2 {
   margin-top: 20px;
 }
 
-.correct {
+.correct{
   color: green;
 }
 
 .incorrect {
   color: red;
+}
+
+.btn {
+  transition-duration: 0.4s;
+  background-color:#fff;
+}
+
+.btn:hover {
+  background-color: #eb4d4d; /* Green */
+  color: white;
+}
+
+
+.gap{
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0% 0% 60% 40%;
+  gap: 5cm;
+}
+
+.form{
+  /* justify-content: center; */
+  font-size: 20px;
+  font-weight: 10px;
+  /* text-align: center; */
 }
